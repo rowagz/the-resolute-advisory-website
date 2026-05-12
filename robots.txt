@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Crawl-restricted paths (artifacts that shouldn't be in production)
+Disallow: /uploads/
+Disallow: /compare/
+
+Sitemap: https://theresoluteadvisory.com/sitemap.xml

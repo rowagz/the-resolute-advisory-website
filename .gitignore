@@ -1,0 +1,28 @@
+# OS / IDE
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+*.swp
+*~
+
+# Build artifacts / archives at repo root — don't ship these
+*.zip
+*.pdf
+
+# Local server / Python cruft
+__pycache__/
+*.py[cod]
+.python-version
+
+# Draft / comparison HTMLs — do not publish
+index-print.html
+index-studio-v1.html
+Resolute Awwwards.html
+resolute-advisory-v6.html
+compare/
+uploads/
+
+# Empty leftover folder (delete it manually once your IDE releases the lock)
+Resolute Advisory Website_v6/
