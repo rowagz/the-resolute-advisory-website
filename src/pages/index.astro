@@ -1,0 +1,38 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Loader from '../components/Loader.astro';
+import Cursor from '../components/Cursor.astro';
+import ScrollProgress from '../components/ScrollProgress.astro';
+import Nav from '../components/Nav.astro';
+import Hero from '../components/Hero.astro';
+import Position from '../components/Position.astro';
+import ProofBar from '../components/ProofBar.astro';
+import Practices from '../components/Practices.astro';
+import Engagement from '../components/Engagement.astro';
+import Work from '../components/Work.astro';
+import Insights from '../components/Insights.astro';
+import Team from '../components/Team.astro';
+import Brief from '../components/Brief.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout>
+  <Loader />
+  <Cursor />
+  <ScrollProgress />
+  <Nav />
+
+  <main id="main">
+    <Hero />
+    <Position />
+    <ProofBar />
+    <Practices />
+    <Engagement />
+    <Work />
+    <Insights />
+    <Team />
+    <Brief />
+  </main>
+
+  <Footer />
+</Layout>

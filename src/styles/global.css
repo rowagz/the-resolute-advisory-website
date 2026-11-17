@@ -1,0 +1,14 @@
+/*
+ * Tailwind v4 without Preflight: the theme + utilities layers only, so the
+ * ported site CSS below renders exactly as it did on the static site.
+ * Add `@import "tailwindcss/preflight.css" layer(base);` later if/when the
+ * redesign moves fully onto Tailwind.
+ */
+@layer theme, base, components, utilities;
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/utilities.css" layer(utilities);
+
+/* Original site styles, unchanged and in their original order. */
+@import "./tokens.css";
+@import "./core.css";
+@import "./consultancy.css";

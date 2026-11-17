@@ -1,0 +1,18 @@
+---
+import CaseStack from './CaseStack';
+import { cases } from '../data/cases';
+---
+
+<!-- ═══ §06 WORK ═══ -->
+<section class="c-sec work" id="work" aria-labelledby="work-heading" data-screen-label="06 Work">
+  <div class="work-inner">
+    <div class="c-label">§ 06 — Selected engagements</div>
+    <h2 class="work-section-title" id="work-heading">Real briefs.<br>Documented outcomes.</h2>
+    <p class="work-section-sub">Five engagements from 2023–2024. Each starts with a diagnosis. Each ends with
+      something that works without us in the room. Click any case to read the full diagnosis.</p>
+
+    <CaseStack client:load cases={cases} />
+
+    <p class="work-foot"><a href="#brief">& 45 more engagements, quietly shipped — Index of work, 2020–2026</a></p>
+  </div>
+</section>

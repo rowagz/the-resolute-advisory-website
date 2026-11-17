@@ -6,7 +6,8 @@
     "enabled": true
   },
   "assets": {
-    "directory": "."
+    // Astro static build output (`npm run build`)
+    "directory": "./dist"
   },
   "compatibility_flags": [
     "nodejs_compat"

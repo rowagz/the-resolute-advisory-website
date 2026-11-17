@@ -57,7 +57,7 @@
   const revealSelector = [
     '.c-title','.c-sub','.position-lead','.prac-row','.eng-cell',
     '.proof-cell','.t-row','.b-aside-block','.pcp-row',
-    '.case-entry','.ins-item','.impl-arm',
+    '.ins-item','.impl-arm',
     '.work-section-title','.work-section-sub'
   ].join(',');
 
@@ -80,22 +80,7 @@
   }, {threshold: 0.06});
   revealEls.forEach(el => rObs.observe(el));
 
-  // ── Case stack: click to expand, one open at a time ──
-  document.querySelectorAll('.case-entry .case-head').forEach(head => {
-    head.addEventListener('click', () => {
-      const entry = head.closest('.case-entry');
-      const wasOpen = entry.classList.contains('is-open');
-      document.querySelectorAll('.case-entry.is-open').forEach(open => {
-        open.classList.remove('is-open');
-        const btn = open.querySelector('.case-head');
-        if(btn) btn.setAttribute('aria-expanded', 'false');
-      });
-      if(!wasOpen){
-        entry.classList.add('is-open');
-        head.setAttribute('aria-expanded', 'true');
-      }
-    });
-  });
+  // Case stack (§06) is handled by the CaseStack React island.
 
   // ── Footer time ──
   const ft = document.getElementById('footerTime');
@@ -108,39 +93,5 @@
   updateTime();
   setInterval(updateTime, 30000);
 
-  // ── Brief form: submit via Web3Forms (AJAX, in-page success/error) ──
-  const bf = document.querySelector('.brief-form');
-  if(bf){
-    bf.addEventListener('submit', async (e)=>{
-      e.preventDefault();
-      const btn = bf.querySelector('.btn--submit');
-      if(!btn) return;
-      const original = btn.textContent;
-      btn.textContent = 'Sending…';
-      btn.style.pointerEvents = 'none';
-      btn.style.opacity = '0.7';
-      try {
-        const res = await fetch(bf.action, {
-          method: 'POST',
-          headers: {'Accept': 'application/json'},
-          body: new FormData(bf)
-        });
-        const data = await res.json().catch(()=>({}));
-        if(res.ok && data.success !== false){
-          btn.textContent = 'Sent · We’ll be in touch →';
-          bf.querySelectorAll('input, textarea, button').forEach(el => el.disabled = true);
-        } else {
-          btn.textContent = 'Could not send · Try email →';
-          btn.style.pointerEvents = 'auto';
-          btn.style.opacity = '1';
-          setTimeout(()=>{ btn.textContent = original; }, 4000);
-        }
-      } catch(err) {
-        btn.textContent = 'Network error · Try email →';
-        btn.style.pointerEvents = 'auto';
-        btn.style.opacity = '1';
-        setTimeout(()=>{ btn.textContent = original; }, 4000);
-      }
-    });
-  }
+  // Brief form (§08) is handled by the BriefForm React island.
 })();
