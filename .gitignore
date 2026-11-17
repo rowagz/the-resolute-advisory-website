@@ -33,3 +33,8 @@ Resolute Advisory Website_v6/
 !.dev.vars.example
 .env*
 !.env.example
+
+# Node / Astro
+node_modules/
+dist/
+.astro/
