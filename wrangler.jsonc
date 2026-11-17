@@ -5,6 +5,11 @@
   "observability": {
     "enabled": true
   },
+  // Build the Astro site before every deploy / versions upload, so Cloudflare
+  // Workers Builds works with its default deploy command and no build command.
+  "build": {
+    "command": "npm run build"
+  },
   "assets": {
     // Astro static build output (`npm run build`)
     "directory": "./dist"

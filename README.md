@@ -22,7 +22,7 @@ npm run deploy   # build + wrangler deploy
 
 ## Deploy
 
-`wrangler.jsonc` serves `./dist`. If the Worker is deployed by Cloudflare Workers Builds (Git integration), set the build command to `npm run build` (deploy command stays `npx wrangler deploy`).
+`wrangler.jsonc` serves `./dist` and runs `npm run build` as a custom build step before every `wrangler deploy` / `wrangler versions upload`, so Cloudflare Workers Builds needs no separate build command.
 
 ## React Bits (shadcn CLI)
 
